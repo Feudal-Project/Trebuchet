@@ -102,7 +102,7 @@ You may ask yourself what benefit this really provides you. Simple answer: Your 
 
 ## Component selection
 
-#### Relay
+### Relay
 Most simple appliances can be controlled via a relay. In order to find the best relay for your usecase, a few things need to be considered.
 
 First of all (and most importantly), the relay needs to work with your low voltage level. At the moment the only voltage level for the trebuchet is 24V DC, so make sure, your relay works with this voltage level at the input ports. 
@@ -112,7 +112,7 @@ Another important metric is the current rating of the relay. If you power a simp
 To minimize your own electric bill, you might want to take a look at the electric consumption of the relay itself. Most of the time, the wattage needed by the relay is stated in the datasheet, but more often than not, this value is a bit higher then what it actually needs. If you want to minimize your consumption, you have to order the relay and measure it yourself with a multimeter. You can also take a look at the comparison table in the 
 section. Another option to minimize the relays power consumption can be to use impulse controlled relays. These can be more expensive money wise as well as memory wise. But then ESPHome has to keep track of the current state of the relays, because there is no way for the Trebuchet to know, if the relay is on, or off.
 
-#### Power supply
+### Power supply
 Your power supply selection is mainly influenced by the number of relays and the power needed by the relay itself. The voltage needs to be 24V DC, as no other voltage is supported by the trebuchet at the moment.
 
 I would suggest you choose a power supply from a reputable brand (like Meanwell), because going cheap on this one, will lead to unstable states. In my opinion 20-40€ more on a power supply which most likely will last for 10 years or more are reasonable, compared to a cheap one, which my start to produce coil noises and goes dead in 2-3 years.
@@ -124,13 +124,13 @@ With the formular above, you will get a number which should work for your setup 
 
 If the wattage is above any power supply which you can get a hold of, simply split the power line. Use a power supply for only one or two trebuchets and connect their grounds together. This is possible, because the input and output circuitry is galvanically isolated from the driving logic. If you are unsure, just ask a question in [Q&A discussion section](https://github.com/Feudal-Project/Trebuchet/discussions/categories/q-a).
 
-#### Wall switches
+### Wall switches
 You can choose between two types of switches typically. The first option (which is used most often), is the toggle switch. It can get turned on or off, which causes to change the permanent state inside of ESPHome. The momentary switch will flick back into its position as soon as the user releases the switch. As a result, ESPHome will see a short pulse at the input signal.
 
 The answer to which is right for you is simple. If you want to be able to rip out the Smart System and use only the switches and relays later, you should use toggle switches, so that the relays stay on and if the switch is “turned on”. If you want to get the most out of the multiclick feature and hate the fact that a toggle switch might not represent the actual state of the output, you should get momentary switches. Even if you choose momentary switches and want to rip out the feudal project later on, you could just buy toggle switches (to replace the momentary ones), or impuls relays (to replace the normal relays).
 
 ## ESPHome configuration
-The Trebuchet can be included into ESPHome as a package (a simple copy paste example can be found here). To know more about ESPHome packages look here for official information. An external ESP32 based controller is necessary, as the Trebuchet does not include one by itself. Take a look at the [Onager](https://github.com/Feudal-Project/Onager) as the recommended option, but any ESP32 microcontroller should work as long as its voltage converter is able to provide enough power. The package allows you to configure each input/output with the following parameters:
+The Trebuchet can be included into ESPHome as a package (a simple copy paste example can be found here). With ESPHome being not able to use external packages as a template at the moment, you need to download the files located [here](https://github.com/Feudal-Project/Trebuchet/tree/main/esphome/packages) and copy them in your ESPHome directory. An explanation on where your ESPHome directory is, can be found [here](https://esphome.io/guides/getting_started_hassio.html#device-builder-interface). To know more about ESPHome packages look [here](https://esphome.io/components/packages.html#packages-as-templates) for official information. An external ESP32 based controller is necessary, as the Trebuchet does not include one by itself. Take a look at the [Onager](https://github.com/Feudal-Project/Onager) as the recommended option, but any ESP32 microcontroller should work as long as its voltage converter is able to provide enough power. The package allows you to configure each input/output with the following parameters:
 
 - ***Module_Name:***
 Name your module to your liking.

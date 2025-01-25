@@ -3,6 +3,7 @@ switch:
     name: "Dont use"
     id: NEVERUSED
     disabled_by_default: TRUE
+    internal: True
     lambda: |-
         return false;
     turn_on_action:
