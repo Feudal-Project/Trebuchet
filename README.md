@@ -5,15 +5,10 @@ The Trebuchet is a DIN rail mountable IO module which can be connected to the [
 ## Features
 
 - 16 24V inputs
-
 - 16 24V low side switching outputs functioning as relay drivers (integrated flyback diode).
-
 - Side connector for daisy chaining up to 4 trebuchet modules.
-
 - Galvanically isolated input and output rows to prevent cascading damage throughout daisy chained devices.
-
 - 3D printable housing with engraved port descriptions and DIN Rail compatibility with 3D printed locking keys.
-
 - Highly versatile in its use due to the vast possibilities of ESPHome.
 
 <p align="center">
