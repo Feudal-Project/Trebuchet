@@ -1,3 +1,6 @@
+# UPDATE:
+This repository is closed and all its contentn is moved to the [OpenDINRail repo](https://github.com/Feudal-Project/OpenDINRail).
+
 # Trebuchet
 
 The Trebuchet is a DIN rail mountable IO module which can be connected to the [Onager](https://github.com/Feudal-Project/Onager) module (controller). It is intended as a DIY project for anyone who is already familiar with ESPHome and has a basic to advanced level of soldering skills.
